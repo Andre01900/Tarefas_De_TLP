@@ -1,0 +1,248 @@
+<html>
+<head>
+    <title>T5-PAGINA INICIAL</title>
+</head>
+<body>
+        <fieldset>
+            <legend>T1 - INTRODUÇÃO AO CSS</legend>
+            <h1>INTRODUÇÃO AO CSS</h1>
+    <p>CSS (Cascading Style Sheets — Folhas de Estilo em Cascata) é uma linguagem utilizada para definir a apresentação visual de páginas web desenvolvidas com HTML. Enquanto o HTML é responsável pela estrutura do conteúdo (títulos, parágrafos, imagens, tabelas), o CSS controla a aparência desses elementos, como cores, fontes, tamanhos, espaçamentos e posicionamento.</p>
+    <h2>IMPORTÂNCIA DO CSS NO DESENVOLVIMENTO WEB</h2>
+    <p>O CSS é fundamental no desenvolvimento web moderno porque permite a separação entre conteúdo e design. Isso torna os sites mais organizados, fáceis de manter e visualmente atrativos. Entre as principais importâncias do CSS destacam-se: - Melhora a aparência visual dos sites; Facilita a manutenção e atualização do layout; - Permite reutilização de estilos em várias páginas; Torna os sites mais responsivos e adaptáveis a diferentes dispositivos; - Reduz a repetição de código HTML.</p>
+    <h2>TIPOS DE FOLHAS DE ESTILO (CSS)</h2>
+    <p>Existem três tipos principais de folhas de estilo CSS:
+<ul>
+    <li>CSS Inline - O CSS inline é aplicado diretamente dentro da tag HTML, usando o atributo style. É indicado apenas para pequenos ajustes, pois dificulta a manutenção do código.</li>
+    <li> CSS Interno (ou Incorporado) - O CSS interno é definido dentro da própria página HTML, na seção "head", usando a tag "style". É útil quando os estilos são aplicados apenas a uma única página.</li>
+    <li> CSS Externo - O CSS externo é criado em um arquivo separado com extensão .css e ligado ao HTML. É o método mais recomendado, pois facilita a organização, manutenção e reutilização dos estilos em várias páginas.</li>
+</ul></p>
+        </fieldset>
+
+        <fieldset>
+            <legend>T2 - Continuação(SINTAXE BÁSICA DO CSS)</legend>
+            <h1>SINTAXE BÁSICA do CSS</h1>
+    <p>A estrutura básica de uma regra CSS é composta por seletor, propriedade e valor. Exemplo: p { color: blue; font-size: 16px; } </p>
+    <h2>TIPOS DE SELECTORES SIMPLES</h2>
+<ul>
+    <li>Seletor de Elemento: Seleciona todas as tags HTML do mesmo tipo. Exemplo: p { color: red; } </li>
+    <li>Seletor de Classe: Usa o ponto (.) e pode ser reutilizado em vários elementos. Exemplo: .titulo { color: green; } </li>
+    <li>Seletor de ID: Usa o símbolo # e identifica um único elemento. Exemplo: #menu { background: black; } </li>
+    <li>Seletor Universal: Usa * para selecionar todos os elementos. Exemplo: * { margin: 0; padding: 0; } </li>
+</ul>
+    <h2>Diferença entre Class e ID</h2>
+    <p>Class pode ser reutilizada em vários elementos, enquanto o ID deve ser único em toda a página.</p>
+    <h2>Prioridade no CSS (Cascata)</h2>
+    <p>A ordem de prioridade é: Inline > ID > Classe > Elemento.</p>
+    <h2>Principais Propriedades CSS</h2>
+<ul>
+    <li>color e background-color: definem cores</li>
+    <li>font-size, font-family, font-weight: definem fontes</li>
+    <li>margin e padding: definem espaçamentos</li>
+    <li>border: define bordas</li>
+    <li>width e height: definem tamanhos</li>
+</ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>T3 - EXERCÍCIOS (DIV)</legend>
+        <style>
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+h1 {
+    font-family: "Arial Black", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+}
+
+p {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #2c3e50;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: #2c3e50;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #e74c3c;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.box {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.box:nth-child(1) {
+    background: rgba(231, 76, 60, 0.5);
+}
+
+.box:nth-child(2) {
+    background: rgba(46, 204, 113, 0.5);
+}
+
+.box:nth-child(3) {
+    background: rgba(52, 152, 219, 0.5);
+}
+</style>
+
+</head>
+<body>
+
+<h1>EXERCÍCIOS (DIV)</h1>
+
+<p>
+Antes de decidir ir embora, ou antes de decidir ficar...
+Pergunte:
+Oque me machucou tanto que eu precisei parar de sentir?.
+</p>
+
+<p><a href="https://www.google.com" target="_blank">Testar efeito hover</a></p>
+
+<div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+        </fieldset>
+
+        <fieldset>
+        <legend>T4 - LAYOUT DE PÁGINA</legend>
+         <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        .menu {
+            background-color: #9FD356;
+            border: 2px solid #333;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .slidebar {
+            background-color: #B8E986;
+            border: 2px solid #333;
+            padding: 60px 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .fotos-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        .foto-box {
+            background-color: #B8E986;
+            border: 2px solid #333;
+            width: 120px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .foto-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .textos-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        .texto-box {
+            background-color: #B8E986;
+            border: 2px solid #333;
+            flex: 1;
+            padding: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #9FD356;
+            border: 2px solid #333;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">MENU</div>
+
+    <div class="slidebar">SIDE BAR</div>
+
+    <div class="fotos-container">
+        <div class="foto-box">
+            <img src="Imagem/1.jpg" alt="Foto 1">
+        </div>
+        <div class="foto-box">
+            <img src="Imagem/2.jpg" alt="Foto 2">
+        </div>
+        <div class="foto-box">
+            <img src="Imagem/3.jpeg" alt="Foto 3">
+        </div>
+    </div>
+
+    <div class="textos-container">
+        <div class="texto-box">
+            "O sucesso é a soma de pequenos esforços repetidos dia após dia. Não desista, você está mais perto do que pensa!"
+        </div>
+        <div class="texto-box">
+            "Você é mais forte do que acredita e capaz de mais do que imagina. Acredite em si mesmo e conquiste seus sonhos!"
+        </div>
+    </div>
+
+    <div class="footer">FOOTER</div>
+        </fieldset>
+        
+        <a href="tri2.html">VOLTAR</a>
+</body>
+</html>
