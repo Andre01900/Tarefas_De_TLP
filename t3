@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>Controle de Notas</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+    button {
+        grid-column: 1 / 3;
+        padding: 12px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #1d4ed8;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background: #2563eb;
+        color: white;
+    }
+    .curso-titulo {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px;
+        background: #e2e8f0;
+        border: 1px solid #ddd;
+    }
+    .obs-aprovado {
+        color: green;
+        font-weight: bold;
+    }
+    .obs-reprovado {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    
+    <form id="formulario">
+        <input type="text" id="curso" placeholder="Nome do Curso" required>
+        <input type="text" id="nome_aluno" placeholder="Nome do Aluno" required>
+        <input type="number" id="mac" placeholder="MAC" step="0.01" min="0" max="20" required>
+        <input type="number" id="pp" placeholder="P.P" step="0.01" min="0" max="20" required>
+        <input type="number" id="pe" placeholder="P.E" step="0.01" min="0" max="20" required>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <table id="tabela">
+        <thead>
+            <tr>
+                <th colspan="6" class="curso-titulo" id="curso_titulo">Curso: </th>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <th>MAC</th>
+                <th>P.P</th>
+                <th>P.E</th>
+                <th>M.F</th>
+                <th>Obs</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const form = document.getElementById('formulario');
+    const tabela = document.querySelector('#tabela tbody');
+    const cursoTitulo = document.getElementById('curso_titulo');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const curso = document.getElementById('curso').value;
+        const nome = document.getElementById('nome_aluno').value;
+        const mac = parseFloat(document.getElementById('mac').value);
+        const pp = parseFloat(document.getElementById('pp').value);
+        const pe = parseFloat(document.getElementById('pe').value);
+
+        cursoTitulo.textContent = `Curso: ${curso}`;
+
+        const mf = ((mac + pp + pe) / 3).toFixed(2);
+
+        let obs = mf >= 10 ? "Aprovado" : "Reprovado";
+        let obsClass = mf >= 10 ? "obs-aprovado" : "obs-reprovado";
+
+        const novaLinha = tabela.insertRow();
+        novaLinha.innerHTML = `
+            <td>${nome}</td>
+            <td>${mac.toFixed(2)}</td>
+            <td>${pp.toFixed(2)}</td>
+            <td>${pe.toFixed(2)}</td>
+            <td>${mf}</td>
+            <td class="${obsClass}">${obs}</td>
+        `;
+
+        form.reset();
+    });
+</script>
+<hreaf
+
+</body>
+</html>
